@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Miku UI Audio Forwarder</string>
+    <string name="et_ip_text">Enter your Windows PC\'s IP here…</string>
+    <string name="btn_connect_text">Connect</string>
+    <string name="btn_disconnect_text">Disconnect</string>
+    <string name="about_footer" translatable="false">© 2025 Miku UI</string>
+    <string name="tip_running">Forwarding audio data to Windows PC</string>
+    <string name="tip_invalid_ip">Invalid IP!</string>
+</resources>

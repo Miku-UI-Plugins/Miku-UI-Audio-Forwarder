@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Miku UI 音频转发</string>
+    <string name="et_ip_text">请在此处输入Windows PC的IP哦…</string>
+    <string name="btn_connect_text">连接</string>
+    <string name="btn_disconnect_text">断开</string>
+    <string name="tip_running">正在转发音频数据到Windows PC</string>
+    <string name="tip_invalid_ip">非法 IP!</string>
+</resources>

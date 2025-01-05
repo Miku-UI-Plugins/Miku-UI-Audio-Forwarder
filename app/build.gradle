@@ -1,0 +1,103 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.ame.audioforward'
+    compileSdk 35
+
+    buildFeatures {
+        buildConfig  true
+    }
+    defaultConfig {
+        applicationId "com.miku.audioforward"
+        minSdk 31
+        targetSdk 35
+        versionCode 1
+        versionName "1.0.0"
+        flavorDimensions "varient"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        official {
+            dimension "varient"
+            buildConfigField "String", "FLAVOR", "\"official\""
+        }
+        unofficial {
+            dimension "varient"
+            buildConfigField "String", "FLAVOR", "\"unofficial\""
+        }
+    }
+
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = "Miku UI Audio Forwarder v${variant.versionName}_${variant.flavorName}.apk"
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    signingConfigs {
+        debug {
+            storeFile file('miku.jks')
+            storePassword "123456"
+            keyAlias "miku"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file('miku.jks')
+            storePassword "123456"
+            keyAlias "miku"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        /*
+        debug {
+            storeFile file('aosp.jks')
+            storePassword "123456"
+            keyAlias "aosp"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        release {
+            storeFile file('aosp.jks')
+            storePassword "123456"
+            keyAlias "aosp"
+            keyPassword "123456"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+         */
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.preference
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
