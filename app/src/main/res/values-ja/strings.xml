@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Miku UI オーディオ転送</string>
+  <string name="et_ip_text">ここに PC の IP を入力してください…</string>
+  <string name="btn_connect_text">接続</string>
+  <string name="btn_disconnect_text">切断</string>
+  <string name="tip_running">オーディオデータを PC に転送します</string>
+  <string name="tip_invalid_ip">無効な IP です！</string>
+</resources>
